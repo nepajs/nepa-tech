@@ -1,26 +1,19 @@
-# gatsby-starter-default
-The default Gatsby starter.
+# NEPA Tech [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
+> Website for the Northeastern Pennsylvania Tech Meetup. Built on Gatsby.
 
-## Install
+TODO
 
-Make sure that you have the Gatsby CLI program installed:
-```sh
-npm install --global gatsby-cli
-```
+[Visit Website]() // TODO
 
-And run from your CLI:
-```sh
-gatsby new gatsby-example-site
-```
+[Find us on Meetup]() // TODO
 
-Then you can run it by:
-```sh
-cd gatsby-example-site
-npm run develop
-```
+---
 
-## Deploy
+## Code of Conduct
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+Read our [Code of Conduct](CODE-OF-CONDUCT)
+
+## License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
