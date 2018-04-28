@@ -12,20 +12,31 @@
     "test:update": "jest --updateSnapshot",
     "test:watch": "jest --watch"
   },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/src/utils/setupTests.js",
+    "transform": {
+      ".(js|jsx)": "babel-jest"
+    },
+    "testRegex": "(\\.(test|spec))\\.(jsx|js)$",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/.cache/"
+    ],
+    "moduleFileExtensions": [
+      "jsx",
+      "js"
+    ]
+  },
   "dependencies": {
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-offline": "^1.0.15",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-react-next": "^1.0.11",
-    "gatsby-plugin-resolve-src": "^1.1.3",
     "gatsby-plugin-styled-components": "^2.0.11",
     "normalize.css": "^8.0.0",
     "prop-types": "^15.6.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
     "react-helmet": "^5.2.0",
-    "react-router-dom": "^4.2.2",
     "styled-components": "^3.2.6"
   },
   "devDependencies": {
@@ -33,15 +44,9 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.3",
     "jest": "^22.4.3",
-    "prettier": "^1.12.0"
-  },
-  "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>/src/utils/setupTests.js",
-    "transform": {
-      ".(js|jsx)": "babel-jest"
-    },
-    "testRegex": "(\\.(test|spec))\\.(jsx|js)$",
-    "testPathIgnorePatterns": ["/node_modules/", "/.cache/"],
-    "moduleFileExtensions": ["jsx", "js"]
+    "prettier": "^1.12.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-router-dom": "^4.2.2"
   }
 }

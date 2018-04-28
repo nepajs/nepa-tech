@@ -1,46 +1,62 @@
 import React, { PureComponent, Fragment } from 'react'
+import { ThemeProvider } from 'styled-components'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Header from 'components/features/Header'
-import theme from 'layouts/theme'
+import { Footer, NavBar } from '../components/features'
+import theme from './theme'
 
 class Layout extends PureComponent {
-  static propTypes = {
-    children: PropTypes.func.isRequired,
-    data: PropTypes.shape({
-      site: PropTypes.shape({
-        siteMetadata: PropTypes.object.isRequired
-      }).isRequired
-    }).isRequired
-  }
-
   render() {
     const { data, children } = this.props
+    const { siteMetadata } = data.site
 
     return (
       <Fragment>
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' }
+            { name: 'description', content: siteMetadata.description },
+            { name: 'keywords', content: siteMetadata.keywordsAsCommaString }
           ]}
         />
-        <Header siteTitle={data.site.siteMetadata.title} />
-        {children()}
+
+        <ThemeProvider theme={theme}>
+          <Fragment>
+            <NavBar logoUrl={siteMetadata.logoUrl} />
+            {children()}
+            <Footer />
+          </Fragment>
+        </ThemeProvider>
       </Fragment>
     )
   }
 }
 
+Layout.propTypes = {
+  children: PropTypes.func.isRequired,
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        logoUrl: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        keywordsAsCommaString: PropTypes.string.isRequired
+      })
+    }).isRequired
+  }).isRequired
+}
+
 export default Layout
 
 export const query = graphql`
-  query SiteTitleQuery {
+  query SiteMetaQuery {
     site {
       siteMetadata {
         title
+        description
+        keywordsAsCommaString
+        logoUrl
       }
     }
   }

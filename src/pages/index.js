@@ -1,16 +1,50 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { PureComponent } from 'react'
+import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
-const IndexPage = () => (
-  <Main>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Main>
-)
+import { Main } from '../components/common'
+import {
+  AboutUs,
+  Companies,
+  HeaderHero,
+  ProfilesPreview
+} from '../components/features'
 
-const Main = styled.main``
+class IndexPage extends PureComponent {
+  render() {
+    const { data } = this.props
+
+    return (
+      <Main>
+        <HeaderHero />
+        <ProfilesPreview />
+        <AboutUs {...data.site.siteMetadata} />
+        <Companies />
+      </Main>
+    )
+  }
+}
+
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string // optional
+      })
+    }).isRequired
+  }).isRequired
+}
 
 export default IndexPage
+
+export const query = graphql`
+  query SiteTitleQuery {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+  }
+`

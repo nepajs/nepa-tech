@@ -1,0 +1,6 @@
+export { default as AboutUs } from './AboutUs'
+export { default as Companies } from './Companies'
+export { default as HeaderHero } from './HeaderHero'
+export { default as Footer } from './Footer'
+export { default as NavBar } from './NavBar'
+export { default as ProfilesPreview } from './ProfilesPreview'
