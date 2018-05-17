@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react'
+import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 
-import { Profile, ProfilesLoading, Section } from '../../common'
+import { Button, Profile, Section } from '../../common'
 
-class ProfilePreview extends PureComponent {
+class ProfilePreview extends Component {
   constructor() {
     super()
     this.state = {
@@ -11,33 +11,50 @@ class ProfilePreview extends PureComponent {
       profiles: null
     }
 
-    this.renderProfiles = this.renderProfiles.bind()
+    this.handleClick = this.handleClick.bind()
   }
 
   async componentDidMount() {
+    /* Demo only code */
     const res = await fetch(this.state.profilesUrl)
     const json = await res.json()
-    this.setState({ profiles: json.slice(0, 3) })
+    this.setState({ profiles: json.slice(0, 5) })
   }
 
-  renderProfiles(profiles) {
-    return profiles ? (
-      profiles.map(profile => <Profile key={profile.id} {...profile} />)
-    ) : (
-      <ProfilesLoading />
-    )
+  handleClick() {
+    console.log('Clicked!')
   }
 
   render() {
     const { profiles } = this.state
 
     return (
-      <Section>
-        <h2>Profiles</h2>
-        {this.renderProfiles(profiles)}
+      <Section title="Meet NEPA's biggest rockstars">
+        <StyledContainer>
+          {profiles ? (
+            <Fragment>
+              {profiles.map(profile => (
+                <Profile key={profile.id} {...profile} />
+              ))}
+              <Button handleClick={this.handleClick}>And more...</Button>
+            </Fragment>
+          ) : (
+            <LoadingArea />
+          )}
+        </StyledContainer>
       </Section>
     )
   }
 }
+
+const StyledContainer = styled.div`
+  /* display */
+  display: flex;
+  flex-wrap: wrap;
+  /* box */
+  width: 100%;
+`
+
+const LoadingArea = styled.div``
 
 export default ProfilePreview

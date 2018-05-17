@@ -12,8 +12,11 @@ class Footer extends PureComponent {
 }
 
 const StyledFooter = styled.footer`
-  color: white;
-  background-color: navy;
+  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.black};
+  min-height: 30vh;
+  /* Extends footer to bottom of screen */
+  box-shadow: 0 50vh 0 50vh ${({ theme }) => theme.colors.black};
 `
 
 export default Footer

@@ -1,6 +1,6 @@
 import React from 'react'
-import ProfilePreview from './index'
+import MyComponent from '../ProfilesPreview'
 
 it('renders without crashing (smoke test)', () => {
-  shallow(<ProfilePreview />)
+  shallow(<MyComponent />)
 })

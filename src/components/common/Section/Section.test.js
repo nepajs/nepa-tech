@@ -1,6 +1,6 @@
 import React from 'react'
-import Section from './index'
+import MyComponent from '../Section'
 
 it('renders without crashing (smoke test)', () => {
-  shallow(<Section>Child</Section>)
+  shallow(<MyComponent>Child</MyComponent>)
 })

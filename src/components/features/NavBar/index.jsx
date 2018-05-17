@@ -22,11 +22,15 @@ class NavBar extends PureComponent {
 
     return (
       <StyledNav>
-        <Link to="/">{logo}</Link>
-        <Link to="/example">Example</Link>
-        <Link to="/meetup">Meetup</Link>
-        <Link to="/profiles">Profiles</Link>
-        <Link to="/404">404</Link>
+        <LeftSide>
+          <Link to="/">{logo}</Link>
+        </LeftSide>
+        <RightSide>
+          <Link to="/example">Example</Link>
+          <Link to="/meetup">Meetup</Link>
+          <Link to="/profiles">Profiles</Link>
+          <Link to="/404">404</Link>
+        </RightSide>
       </StyledNav>
     )
   }
@@ -36,9 +40,23 @@ const StyledNav = styled.nav`
   /* display */
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
+  /* box */
+  width: 100%;
   /* text */
   font-size: 0.8em;
+`
+
+const LeftSide = styled.div`
+  flex: 1;
+`
+const RightSide = styled.div`
+  /* display */
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 `
 
 NavBar.propTypes = {

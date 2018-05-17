@@ -1,6 +1,6 @@
 import React from 'react'
-import AboutUs from './index'
+import MyComponent from '../AboutUs'
 
 it('renders without crashing (smoke test)', () => {
-  shallow(<AboutUs title="test" description="test" />)
+  shallow(<MyComponent title="test" description="test" />)
 })

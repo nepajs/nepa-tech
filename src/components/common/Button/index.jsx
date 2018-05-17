@@ -8,7 +8,9 @@ const Button = ({ children, handleClick, ...rest }) => (
   </StyledButton>
 )
 
-const StyledButton = styled.button``
+const StyledButton = styled.button`
+  align-self: center;
+`
 
 Button.propTypes = {
   children: PropTypes.node,

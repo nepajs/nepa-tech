@@ -29,6 +29,14 @@ class HeaderHero extends PureComponent {
   }
 }
 
-const StyledHeader = styled.header``
+const StyledHeader = styled.header`
+  /* display */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* box */
+  min-height: 90vh;
+`
 
 export default HeaderHero

@@ -1,6 +1,6 @@
 import React from 'react'
-import CallToAction from './index'
+import MyComponent from '../CallToAction'
 
 it('renders without crashing (smoke test)', () => {
-  shallow(<CallToAction text="test" label="test" url="test" />)
+  shallow(<MyComponent text="test" label="test" url="test" />)
 })

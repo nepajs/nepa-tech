@@ -1,6 +1,6 @@
 import React from 'react'
-import NavBar from './index'
+import MyComponent from '../NavBar'
 
 it('renders without crashing (smoke test)', () => {
-  shallow(<NavBar logoUrl="test" />)
+  shallow(<MyComponent logoUrl="test" />)
 })

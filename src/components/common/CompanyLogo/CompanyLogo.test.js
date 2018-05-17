@@ -1,6 +1,6 @@
 import React from 'react'
-import CompanyLogo from './index'
+import MyComponent from '../CompanyLogo'
 
 it('renders without crashing (smoke test)', () => {
-  shallow(<CompanyLogo thumbnailUrl="test" url="test" />)
+  shallow(<MyComponent thumbnailUrl="test" url="test" />)
 })

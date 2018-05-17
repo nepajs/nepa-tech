@@ -15,7 +15,15 @@ const CallToAction = ({ text, label, url, ...rest }) => {
   )
 }
 
-const StyledContainer = styled.div``
+const StyledContainer = styled.div`
+  /* display */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  /* box */
+  padding: 5%;
+`
 
 CallToAction.propTypes = {
   text: PropTypes.string,

@@ -1,6 +1,6 @@
 import React from 'react'
-import Footer from './index'
+import MyComponent from '../Footer'
 
 it('renders without crashing (smoke test)', () => {
-  shallow(<Footer />)
+  shallow(<MyComponent />)
 })

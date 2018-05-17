@@ -1,6 +1,6 @@
 import React from 'react'
-import HeaderHero from './index'
+import MyComponent from '../HeaderHero'
 
 it('renders without crashing (smoke test)', () => {
-  shallow(<HeaderHero />)
+  shallow(<MyComponent />)
 })

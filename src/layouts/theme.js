@@ -70,7 +70,7 @@ injectGlobal`
     background-color: ${theme.colors.white};
   }
   *, *:before, *:after {
-    border: 0.1px solid pink;
+    /* border: 0.1px solid pink; */
   }
   h1, h2, h3 {
     font-family: ${theme.fontSecondary};

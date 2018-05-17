@@ -1,7 +1,7 @@
 import React from 'react'
-import Button from './index'
+import MyComponent from '../Button'
 
 it('renders without crashing (smoke test)', () => {
-  const handleClick = () => () => {}
-  shallow(<Button onClick={handleClick}>Child</Button>)
+  const mock = jest.fn()
+  shallow(<MyComponent onClick={mock}>Child</MyComponent>)
 })

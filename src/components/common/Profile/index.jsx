@@ -9,7 +9,12 @@ const Profile = props => (
   </StyledContainer>
 )
 
-const StyledContainer = styled.article``
+const StyledContainer = styled.article`
+  /* display */
+  flex: 1 1 auto;
+  /* box */
+  margin: 5px 2%;
+`
 
 Profile.propTypes = {
   name: PropTypes.string.isRequired,

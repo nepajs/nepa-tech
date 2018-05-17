@@ -10,19 +10,25 @@ const Title = ({ title, tagline, ...rest }) => (
 )
 
 const StyledH1 = styled.h1`
-  font-size: ${props => props.fontSize};
+  /* box */
   margin-bottom: 0;
+  /* content */
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
 `
 
 const StyledTagline = styled.p`
-  font-family: ${({ theme }) => theme.fontSecondary};
+  /* box */
   margin-top: 0;
+  /* content */
+  font-family: ${({ theme }) => theme.fontSecondary};
+  text-align: center;
 `
 
 Title.propTypes = {
-  fontSize: PropTypes.string, // optional
-  title: PropTypes.string.isRequired,
-  tagline: PropTypes.string // optional
+  title: PropTypes.string,
+  tagline: PropTypes.string
 }
 
 export default Title
